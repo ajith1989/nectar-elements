@@ -1,17 +1,15 @@
 import React, { FC, HTMLAttributes } from 'react';
-import { Activity, Check, AlertTriangle, } from 'react-feather';
+import { Activity, Check, AlertTriangle } from 'react-feather';
 import { getTypographyAlternateTheme, getButtonTheme } from '../utils/helpers';
 import { Theme } from '../utils/types';
 import { Badge } from './Badge';
-
-
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
     /** Alert child can be a String */
     children: string;
     /** Optional. Specifies the Alert theme defined in the design system */
     theme?: Theme;
     /** Optional. To show or hide icon */
-    showIcon?: boolean
+    showIcon?: boolean;
 }
 
 function getAlertIcon(theme: Theme) {

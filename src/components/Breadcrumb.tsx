@@ -24,7 +24,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ items }) => {
                             {item.link ?
                                 <Hyperlink label={item.label} link={item.link} showIcon={false} /> :
                                 <span>{item.label}</span>}
-                            {index + 1 != items.length && <ChevronRight className="opacity-10" />}
+                            {index + 1 !== items.length && <ChevronRight className="opacity-10" />}
                         </div>
                     )
                 })
