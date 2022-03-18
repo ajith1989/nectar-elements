@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+        @apply border-dark/20 rounded-lg shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-semibold text-base
+    }
+    [type='checkbox'],[type='radio'] {
+        @apply text-primary border-dark/20 h-5 w-5 shadow-sm focus:ring-primary
+    }
+    [type='checkbox'] {
+        @apply rounded-sm
+    }
+}
+
+@layer components {
+    .toggle-checkbox:checked {
+        @apply: right-0 border-green-400;
+        right: 0;
+        border-color: #68D391;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        @apply: bg-green-400;
+        background-color: #68D391;
+    }
+}

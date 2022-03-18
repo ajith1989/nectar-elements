@@ -2,8 +2,6 @@ import React, { FC, HTMLAttributes } from 'react';
 import { Theme } from '../utils/types';
 import { getButtonTheme, getTypographyTheme } from '../utils/helpers';
 import { Tag } from './Tag';
-
-
 export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
     /** Optional. Label for Progress component */
     label?: string;

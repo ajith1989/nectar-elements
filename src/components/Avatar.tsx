@@ -1,7 +1,6 @@
 import React, { FC, HTMLAttributes } from 'react';
 import { Theme, Icon } from '../utils/types';
 import { getButtonTheme } from '../utils/helpers';
-
 export interface AvatarProps extends HTMLAttributes<HTMLSpanElement> {
     /** Text inside Avatar component */
     children?: string;

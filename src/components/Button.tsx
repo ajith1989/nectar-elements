@@ -2,7 +2,6 @@ import React, { FC, HTMLAttributes } from 'react';
 import { Check } from "react-feather";
 import { Theme, Icon } from '../utils/types';
 import { getButtonTheme, getGhostButtonTheme } from '../utils/helpers';
-
 export interface ButtonProps extends HTMLAttributes<HTMLSpanElement> {
     /** Text inside button component */
     children: string;

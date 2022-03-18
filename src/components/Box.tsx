@@ -1,8 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import { Gradient } from '../utils/types';
 import { getGradientStyle } from '../utils/helpers';
-
-
 export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
     /** Box child can be a React Node or a String */
     children: ReactChild | string;

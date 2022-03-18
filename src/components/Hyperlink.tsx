@@ -1,7 +1,5 @@
 import React, { FC, HTMLAttributes } from 'react';
 import { ArrowUpRight } from 'react-feather';
-
-
 export interface HyperlinkProps extends HTMLAttributes<HTMLAnchorElement> {
     /** Label for which hyperlink is to be applied */
     label: string;

@@ -1,8 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import { Gradient, Size } from '../utils/types';
 import { getGradientStyle, getFontSize } from '../utils/helpers';
-
-
 export interface QuoteProps extends HTMLAttributes<HTMLDivElement> {
     /** Quote child can be a React Node or a String */
     children: ReactChild | string;

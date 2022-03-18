@@ -3,8 +3,6 @@ import { Icon, Theme, TrendType } from '../utils/types';
 import { getTypographyAlternateTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
 import { TrendingDown, TrendingUp } from 'react-feather';
-
-
 export interface TrendProps extends HTMLAttributes<HTMLDivElement> {
     /** Box child can be a React Node or a String */
     icon?: Icon;

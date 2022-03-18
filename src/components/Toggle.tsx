@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Switch } from '@headlessui/react';
 import { Theme } from '../utils/types';
 import { getButtonTheme } from '../utils/helpers';
-
 export interface ToggleProps extends HTMLAttributes<HTMLElement> {
     /** Optional. Label for Toggle component */
     label?: string;

@@ -1,8 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import { TypographyType, Theme, Icon } from '../utils/types';
 import { getTypographyStyle, getTypographyTheme } from '../utils/helpers';
-
-
 export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     /** Typography child can be a React Node or a String */
     children: ReactChild | string;

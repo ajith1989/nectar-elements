@@ -82,3 +82,11 @@ Light.args = {
     showIcon: true
 };
 
+export const PrimaryWithoutIcon = Template.bind({});
+
+PrimaryWithoutIcon.args = {
+    children: 'Primary without Icon',
+    theme: 'primary',
+    showIcon: false
+};
+

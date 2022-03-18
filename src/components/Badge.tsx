@@ -1,7 +1,6 @@
 import React, { FC, HTMLAttributes } from 'react';
 import { Theme, Icon } from '../utils/types';
 import { getButtonTheme } from '../utils/helpers';
-
 export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
     /** Optional. Number inside Avatar component */
     count?: number;

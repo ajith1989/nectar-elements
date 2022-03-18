@@ -2,7 +2,6 @@ import React, { FC, HTMLAttributes } from 'react';
 import { Icon, Theme } from '../utils/types';
 import { getTypographyAlternateTheme, getButtonTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
-
 export interface CounterProps extends HTMLAttributes<HTMLDivElement> {
     /** Optional. Icon for Counter */
     icon?: Icon;
