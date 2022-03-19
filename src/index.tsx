@@ -10,6 +10,7 @@ export * from './components/Input';
 export * from './components/Progress';
 export * from './components/Quote';
 export * from './components/Table';
+export * from './components/Thumbail';
 export * from './components/Tag';
 export * from './components/Toggle';
 export * from './components/Trend';
