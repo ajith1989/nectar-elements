@@ -7,6 +7,7 @@ export * from './components/Button';
 export * from './components/Counter';
 export * from './components/Hyperlink';
 export * from './components/Input';
+export * from './components/List';
 export * from './components/Progress';
 export * from './components/Quote';
 export * from './components/Table';

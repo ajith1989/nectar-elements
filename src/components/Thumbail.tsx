@@ -22,7 +22,7 @@ export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image }
             {image ?
                 <div className="absolute inset-0 rounded-lg overflow-hidden">{image}</div>
                 :
-                <div className='flex items-center justify-center h-full bg-secondary/10'>
+                <div className='flex items-center justify-center h-full bg-secondary/10 rounded-lg'>
                     <Typography type='title' theme='primary'>tenex.</Typography>
                 </div>
             }

@@ -10,3 +10,4 @@ export type Size = 'large' | 'medium' | 'small';
 export type TrendType = 'up' | 'down';
 export type Icon = (props: IconProps) => JSX.Element | null;
 export type InputType = 'text' | 'password' | 'select' | 'checkbox' | 'radio' | 'number' | 'textarea' | 'email' | 'range' | 'search' | 'tel' | 'url' | 'color' | 'time' | 'datetime' | 'datetime-local' | 'week' | 'month' | 'date' ;
+export type ListType = 'full' | 'compact' | 'thumbnail'
