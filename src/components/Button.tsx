@@ -34,7 +34,7 @@ const IconComponent = ({ children, icon }: {
  */
 export const Button: FC<ButtonProps> = ({ children, theme = "primary", icon, ghost = false }) => {
     return (
-        <span className={`${ghost ? getGhostButtonTheme(theme) : getButtonTheme(theme)} items-center space-x-2 px-4 py-2 rounded-md inline-flex`}>
+        <span className={`${ghost ? getGhostButtonTheme(theme) : getButtonTheme(theme)} items-center space-x-2 px-4 py-2 rounded-md inline-flex hover:bg-gradient-to-r hover:from-primary hover:to-secondary cursor-pointer hover:text-white`}>
             {icon && <IconComponent children={children} icon={icon} />}
             {children && <span className="text-base whitespace-nowrap">{children}</span>}
         </span>

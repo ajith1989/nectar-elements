@@ -10,7 +10,7 @@ export interface ListProps extends HTMLAttributes<HTMLDivElement> {
     /** Optional. List SubTitle */
     subTitle?: string;
     /** Optional. List Description */
-    description?: string;
+    description?: ReactChild | string;
     /** Optional. List Tag */
     tag?: string;
     /** Optional. Tag Theme */
@@ -42,23 +42,26 @@ export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, i
                         <Typography type='title' theme='primary'>tenex.</Typography>
                     </div>
                 }
-                <div className='absolute top-3 right-3'>
-                    {tag && <span><Tag theme={tagTheme}>{tag}</Tag></span>}
-                </div>
-                <div className="absolute bottom-0 w-full bg-gradient-to-t from-dark p-4 rounded-b-lg">
-                    <div className='flex items-center justify-between'>
-                        <div className='flex items-center space-x-4'>
-                            {icon && <Avatar icon={icon} theme={theme} rounded />}
-                            <div className="flex flex-col space-y-1">
-                                <Typography theme='light' type='body'>{title}</Typography>
-                                {subTitle && <Typography theme='light' type='small'>{subTitle}</Typography>}
-                            </div>
+                {tag &&
+                    <div className='absolute top-3 left-3'>
+                        <span><Tag theme={tagTheme}>{tag}</Tag></span>
+                    </div>
+                }
+                {description &&
+                    <div className='absolute top-0 right-0 bg-primary rounded-tr-lg rounded-bl-lg'>
+
+                        <div className='opacity-70 p-4'>
+                            <Typography theme="light" type='tiny'>{description}</Typography>
                         </div>
-                        {description &&
-                            <div className='opacity-70'>
-                                <Typography theme="light" type='tiny'>{description}</Typography>
-                            </div>
-                        }
+                    </div>
+                }
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-dark p-4 rounded-b-lg">
+                    <div className='flex items-center space-x-4'>
+                        {icon && <Avatar icon={icon} theme={theme} rounded />}
+                        <div className="flex flex-col space-y-1">
+                            <Typography theme='light' type='body'>{title}</Typography>
+                            {subTitle && <Typography theme='light' type='small'>{subTitle}</Typography>}
+                        </div>
                     </div>
                 </div>
             </div>
