@@ -1,6 +1,8 @@
 import React, { FC, Fragment, HTMLAttributes, ReactChild, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react'
+import { Search } from 'react-feather'
 import { Input } from './Input';
+import { Button } from './Button';
 // import { Input } from './Input';
 
 export interface CommandPaletteProps extends HTMLAttributes<HTMLDivElement> {
@@ -39,7 +41,7 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
-                            <Dialog.Overlay className="fixed inset-0 bg-dark/30" />
+                            <Dialog.Overlay className="fixed inset-0 bg-dark/50" />
                         </Transition.Child>
 
                         {/* This element is to trick the browser into centering the modal contents. */}
@@ -58,9 +60,12 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <div className="inline-block w-5/6 p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                                <div className='flex-grow'>
-                                    <Input type='text' name='search' placeholder='Search Anything' register={() => { }} />
+                            <div className="inline-block w-5/6 p-6 my-8 overflow-hidden text-left transition-all transform bg-white shadow-xl rounded-2xl">
+                                <div className='flex items-center space-x-2'>
+                                    <div className='flex-grow'>
+                                        <Input type='text' name='search' placeholder='Search Anything' register={() => { }} />
+                                    </div>
+                                    <Button theme='primary' icon={Search}>Search</Button>
                                 </div>
                             </div>
                         </Transition.Child>
