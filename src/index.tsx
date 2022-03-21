@@ -4,6 +4,7 @@ export * from './components/Badge';
 export * from './components/Box';
 export * from './components/Breadcrumb';
 export * from './components/Button';
+export * from './components/CommandPalette';
 export * from './components/Counter';
 export * from './components/Hyperlink';
 export * from './components/Input';
