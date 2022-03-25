@@ -1,16 +1,9 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC } from 'react';
 import { useState } from 'react';
 import { Switch } from '@headlessui/react';
-import { Theme } from '../utils/types';
+import { ToggleProps } from '../utils/types';
 import { getButtonTheme } from '../utils/helpers';
-export interface ToggleProps extends HTMLAttributes<HTMLElement> {
-    /** Optional. Label for Toggle component */
-    label?: string;
-    /** Optional. Specifies checked state of Toggle component */
-    checked?: boolean;
-    /** Optional. Specifies the button theme defined in the design system */
-    theme?: Theme;
-}
+
 
 /**
  * Toggle component

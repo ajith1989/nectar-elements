@@ -1,14 +1,8 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC } from 'react';
 import { ChevronRight } from 'react-feather';
 import cuid from 'cuid';
 import { Hyperlink } from './Hyperlink';
-export interface BreadcrumbProps extends HTMLAttributes<HTMLDivElement> {
-    /** Input data to build Breadcrumbs */
-    items: Array<{
-        label: string,
-        link?: string
-    }>
-}
+import { BreadcrumbProps } from '../utils/types';
 
 /**
  * Breadcrumb component 

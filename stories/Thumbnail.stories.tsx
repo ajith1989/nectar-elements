@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Thumbnail, ThumbnailProps } from '../src/components/Thumbail';
+import { Thumbnail } from '../src/components/Thumbail';
+import { ThumbnailProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Thumbnail',

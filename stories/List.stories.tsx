@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Home } from 'react-feather';
-import { List, ListProps } from '../src/components/List';
+import { List } from '../src/components/List';
+import { ListProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'List',

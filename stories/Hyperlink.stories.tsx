@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Hyperlink, HyperlinkProps } from '../src/components/Hyperlink';
+import { Hyperlink } from '../src/components/Hyperlink';
+import { HyperlinkProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Hyperlink',

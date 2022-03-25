@@ -1,7 +1,8 @@
 import React from 'react';
 import { Home, BarChart2, User } from 'react-feather';
 import { Meta, Story } from '@storybook/react';
-import { Typography, TypographyProps } from '../src/components/Typography';
+import { Typography } from '../src/components/Typography';
+import { TypographyProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Typography',

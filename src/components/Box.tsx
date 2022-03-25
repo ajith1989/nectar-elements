@@ -1,14 +1,10 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
-import { Gradient } from '../utils/types';
+import React, { FC } from 'react';
+import { GradientTypes } from '../utils/enums';
 import { getGradientStyle } from '../utils/helpers';
-export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
-    /** Box child can be a React Node or a String */
-    children: ReactChild | string;
-    /** Optional. Specifies the Box gradient defined in the design system */
-    gradient?: Gradient;
-}
+import { BoxProps } from '../utils/types';
 
-function getBoxTextStyle(gradient: Gradient) {
+
+function getBoxTextStyle(gradient: GradientTypes) {
     if (gradient === 'gradient1' || gradient === 'dark') return 'text-white';
     return 'text-dark'
 }
@@ -16,9 +12,9 @@ function getBoxTextStyle(gradient: Gradient) {
 /**
  * Box component wraps all box styles in the design system
  */
-export const Box: FC<BoxProps> = ({ gradient = 'gradient1', children }) => {
+export const Box: FC<BoxProps> = ({ gradient = 'gradient1', children, className, style }) => {
     return (
-        <div className={`w-full p-12 rounded-lg ${getGradientStyle(gradient)}`}>
+        <div role="banner" className={`w-full p-12 rounded-lg ${getGradientStyle(gradient)} ${className}`} style={style}>
             <div className={`text-xl font-semibold ${getBoxTextStyle(gradient)}`}>{children}</div>
         </div>
     );

@@ -1,17 +1,7 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import React, { FC } from 'react';
+import { ThumbnailProps } from '../utils/types';
 import { Tag } from './Tag';
 import { Typography } from './Typography';
-
-export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
-    /** Thumbnail Title */
-    title: string;
-    /** Thumbnail Description */
-    description?: string;
-    /** Thumbnail Tag */
-    tag?: string;
-    /** Thumbnail Image Component */
-    image?: ReactChild;
-}
 
 /**
  * Box component wraps all box styles in the design system

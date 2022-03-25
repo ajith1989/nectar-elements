@@ -1,18 +1,9 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
-import { TypographyType, Theme, Icon } from '../utils/types';
+import React, { FC } from 'react';
+import { TypographyTypes } from '../utils/enums';
 import { getTypographyStyle, getTypographyTheme } from '../utils/helpers';
-export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
-    /** Typography child can be a React Node or a String */
-    children: ReactChild | string;
-    /** Optional. Specifies the typography theme defined in the design system */
-    theme?: Theme;
-    /** Optional. Prefix icon before the typography component */
-    icon?: Icon;
-    /** Optional. Specifies the typography type defined in the design system */
-    type?: TypographyType
-}
+import { TypographyProps } from '../utils/types';
 
-function getIconSize(type: TypographyType) {
+function getIconSize(type: TypographyTypes) {
     if (type === 'text') return 16;
     if (type === 'caption') return 36;
     if (type === 'header') return 36;

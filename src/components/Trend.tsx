@@ -1,19 +1,8 @@
-import React, { FC, HTMLAttributes } from 'react';
-import { Icon, Theme, TrendType } from '../utils/types';
+import React, { FC } from 'react';
 import { getTypographyAlternateTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
 import { TrendingDown, TrendingUp } from 'react-feather';
-export interface TrendProps extends HTMLAttributes<HTMLDivElement> {
-    /** Box child can be a React Node or a String */
-    icon?: Icon;
-    label: string;
-    meta: string;
-    count: number;
-    theme?: Theme;
-    border?: boolean;
-    trend?: TrendType;
-    extra?: string;
-}
+import { TrendProps } from '../utils/types';
 
 /**
  * Box component wraps all box styles in the design system

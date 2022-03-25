@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Home } from 'react-feather';
-import { Button, ButtonProps } from '../src/components/Button';
+import { Button } from '../src/components/Button';
+import { ButtonProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Button',
@@ -145,4 +146,12 @@ LightGhost.args = {
     children: 'Light',
     theme: 'light',
     ghost: true
+};
+
+export const ButtonClick = Template.bind({});
+
+ButtonClick.args = {
+    children: 'Click Me',
+    theme: 'primary',
+    onClick: () => alert('Clicked')
 };

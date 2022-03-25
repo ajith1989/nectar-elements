@@ -1,19 +1,8 @@
-import React, { FC, HTMLAttributes } from 'react';
-import { Icon, Theme } from '../utils/types';
+import React, { FC } from 'react';
+import { CounterProps } from '../utils/types';
 import { getTypographyAlternateTheme, getButtonTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
-export interface CounterProps extends HTMLAttributes<HTMLDivElement> {
-    /** Optional. Icon for Counter */
-    icon?: Icon;
-    /** Optional. Specifies the label for counter */
-    label: string;
-    /** Optional. Count for counter */
-    count: number;
-    /** Optional. Specifies the Counter theme defined in the design system */
-    theme?: Theme;
-    /** Optional. With or without border */
-    border?: boolean;
-}
+
 
 /**
  * Counter component

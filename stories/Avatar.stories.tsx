@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { BarChart2 } from 'react-feather';
-import { Avatar, AvatarProps } from '../src/components/Avatar';
+import { Avatar } from '../src/components/Avatar';
+import { AvatarProps } from '../src/utils/types';
 
 
 const meta: Meta = {

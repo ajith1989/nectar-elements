@@ -1,7 +1,8 @@
 import React from 'react';
 import { User } from 'react-feather';
 import { Meta, Story } from '@storybook/react';
-import { Tag, TagProps } from '../src/components/Tag';
+import { Tag } from '../src/components/Tag';
+import { TagProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Tag',

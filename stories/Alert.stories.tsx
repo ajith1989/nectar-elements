@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Alert, AlertProps } from '../src/components/Alert';
+import { Alert } from '../src/components/Alert';
+import { AlertProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Alert',

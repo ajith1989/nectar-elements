@@ -1,31 +1,9 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
-import { Theme, Icon, ListType } from '../utils/types';
+import React, { FC } from 'react';
 import { getButtonTheme } from '../utils/helpers';
 import { Typography } from './Typography';
 import { Avatar } from './Avatar';
 import { Tag } from './Tag';
-export interface ListProps extends HTMLAttributes<HTMLDivElement> {
-    /** List Title */
-    title: string;
-    /** Optional. List SubTitle */
-    subTitle?: string;
-    /** Optional. List Description */
-    description?: ReactChild | string;
-    /** Optional. List Tag */
-    tag?: string;
-    /** Optional. Tag Theme */
-    tagTheme?: Theme;
-    /** Optional. List footer */
-    footer?: ReactChild | string;
-    /** Thumbnail Image Component */
-    image?: ReactChild;
-    /** Optional. Specifies the list theme defined in the design system */
-    theme?: Theme;
-    /** Optional. Prefix icon before the list component */
-    icon?: Icon;
-    /** Optional. Prefix icon before the list component */
-    layout?: ListType;
-}
+import { ListProps } from '../utils/types';
 
 /**
  * List component wraps all button styles in the design system
@@ -34,7 +12,7 @@ export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, i
 
     if (layout === 'thumbnail') {
         return (
-            <div className="relative shadow-lg w-full h-96 group">
+            <div role="list" className="relative shadow-lg w-full h-96 group">
                 {image ?
                     <div className="absolute inset-0 rounded-lg overflow-hidden">{image}</div>
                     :
@@ -69,7 +47,7 @@ export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, i
     }
 
     return (
-        <div className='flex flex-col border border-light shadow-sm'>
+        <div role="list" className='flex flex-col border border-light shadow-sm'>
             <div className='flex items-center justify-between px-4 py-2'>
                 <div className='flex items-center space-x-4'>
                     {icon && <Avatar icon={icon} theme={theme} />}

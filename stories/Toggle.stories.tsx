@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Toggle, Props } from '../src/components/Toggle';
+import { Toggle } from '../src/components/Toggle';
+import { ToggleProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Toggle',
@@ -9,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = args => <Toggle {...args} />;
+const Template: Story<ToggleProps> = args => <Toggle {...args} />;
 
 export const Default = Template.bind({});
 

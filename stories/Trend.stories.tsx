@@ -1,7 +1,8 @@
 import React from 'react';
 import { Home, User, BarChart2, Bell } from 'react-feather';
 import { Meta, Story } from '@storybook/react';
-import { Trend, TrendProps } from '../src/components/Trend';
+import { Trend } from '../src/components/Trend';
+import { TrendProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Trend',

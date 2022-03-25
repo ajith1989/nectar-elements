@@ -1,14 +1,6 @@
-import React, { FC, HTMLAttributes } from 'react';
-import { Theme, Icon } from '../utils/types';
+import React, { FC } from 'react';
 import { getButtonTheme } from '../utils/helpers';
-export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
-    /** Text inside tag component */
-    children: string;
-    /** Optional. Specifies the tag theme defined in the design system */
-    theme?: Theme;
-    /** Optional. Prefix icon before the tag component */
-    icon?: Icon;
-}
+import { TagProps } from '../utils/types';
 
 /**
  * Tag component wraps all tag styles in the design system

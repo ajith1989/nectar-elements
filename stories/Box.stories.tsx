@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Box, BoxProps } from '../src/components/Box';
+import { Box } from '../src/components/Box';
+import { BoxProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Box',

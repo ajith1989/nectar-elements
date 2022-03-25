@@ -1,14 +1,9 @@
-import React, { FC, Fragment, HTMLAttributes, ReactChild, useState } from 'react'
+import React, { FC, Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Search } from 'react-feather'
 import { Input } from './Input';
 import { Button } from './Button';
-// import { Input } from './Input';
-
-export interface CommandPaletteProps extends HTMLAttributes<HTMLDivElement> {
-    /** Trigger component for Command Palette */
-    children: ReactChild;
-}
+import { CommandPaletteProps } from '../utils/types';
 
 /**
  * Command Palette Component
@@ -21,7 +16,7 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
 
 
     return (
-        <>
+        <div>
             <div onClick={openModal}>
                 {children}
             </div>
@@ -72,6 +67,6 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
                     </div>
                 </Dialog>
             </Transition>
-        </>
+        </div>
     );
 };

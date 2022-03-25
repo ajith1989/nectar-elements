@@ -1,36 +1,7 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
-import { InputType } from '../utils/types';
+import React, { FC, ReactChild } from 'react';
+import { InputProps } from '../utils/types';
 
-export interface InputProps extends HTMLAttributes<HTMLInputElement> {
-    /** Specifies Input type */
-    type: InputType,
-    /** Label for Input Component */
-    label?: string,
-    /** Placeholder for Input Component */
-    placeholder?: string,
-    /** Name variable for Input Component */
-    name: string,
-    /** Specifies required or not validation */
-    required?: boolean,
-    /** Min number count */
-    min?: number,
-    /** Max number count */
-    max?: number,
-    /** Min Length count */
-    minLength?: number,
-    /** Max Length count */
-    maxLength?: number,
-    /** Validation Reg Expression */
-    pattern?: string,
-    /** Specifies disabled or not */
-    disabled?: boolean,
-    /** Register function of react hook form */
-    register: Function,
-    /** Options for input component */
-    options?: string[],
-    /** Specifies multiple or not */
-    multiple?: boolean
-}
+
 
 const InputWrapper = ({ label, children }: {
     label?: string;

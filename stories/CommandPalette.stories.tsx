@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { CommandPalette, CommandPaletteProps } from '../src/components/CommandPalette';
+import { CommandPalette } from '../src/components/CommandPalette';
 import { Button } from '../src/components/Button';
+import { CommandPaletteProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Command Palette',

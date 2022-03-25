@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Progress, ProgressProps } from '../src/components/Progress';
+import { Progress } from '../src/components/Progress';
+import { ProgressProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Progress',

@@ -1,17 +1,7 @@
-import React, { FC, HTMLAttributes } from 'react';
-import { Theme } from '../utils/types';
+import React, { FC } from 'react';
 import { getButtonTheme, getTypographyTheme } from '../utils/helpers';
+import { ProgressProps } from '../utils/types';
 import { Tag } from './Tag';
-export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
-    /** Optional. Label for Progress component */
-    label?: string;
-    /** Optional. Percent number for Progress component */
-    percentage?: number;
-    /** Optional. Specifies the Progress theme defined in the design system */
-    theme?: Theme;
-    /** Optional. To show or hide percentage */
-    showPercentage?: boolean;
-}
 
 /**
  * Progres component wraps all progress styles in the design system

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Quote, QuoteProps } from '../src/components/Quote';
+import { Quote } from '../src/components/Quote';
+import { QuoteProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Quote',

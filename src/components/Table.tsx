@@ -1,14 +1,9 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC } from 'react';
 import cuid from 'cuid';
 import { Alert } from './Alert';
 import { EMPTY_DATA, EMPTY_HEADER } from '../utils/messages';
+import { TableProps } from '../utils/types';
 
-export interface TableProps extends HTMLAttributes<HTMLDivElement> {
-    /** Header Columns */
-    headers: string[],
-    /** Data Columns */
-    data: string[][]
-}
 
 /**
  * Box component wraps all box styles in the design system
@@ -20,7 +15,7 @@ export const Table: FC<TableProps> = ({ headers, data }) => {
     if (headers?.length <= 0) return <Alert showIcon theme="warning">{EMPTY_HEADER}</Alert>
 
     return (
-        <div className="shadow overflow-x-scroll rounded-lg">
+        <div role="table" className="shadow overflow-x-scroll rounded-lg">
             <table className="table-auto w-full">
                 <thead className="text-left bg-gradient-to-r from-primary to-secondary text-light rounded-lg">
                     <tr>

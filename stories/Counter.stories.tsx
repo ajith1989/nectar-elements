@@ -1,7 +1,8 @@
 import React from 'react';
 import { Home, User, BarChart2, Bell } from 'react-feather';
 import { Meta, Story } from '@storybook/react';
-import { Counter, CounterProps } from '../src/components/Counter';
+import { Counter } from '../src/components/Counter';
+import { CounterProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Counter',

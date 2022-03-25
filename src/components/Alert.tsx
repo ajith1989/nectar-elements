@@ -1,18 +1,11 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC } from 'react';
 import { Activity, Check, AlertTriangle } from 'react-feather';
+import { ThemeTypes } from '../utils/enums';
 import { getTypographyAlternateTheme, getButtonTheme } from '../utils/helpers';
-import { Theme } from '../utils/types';
+import { AlertProps } from '../utils/types';
 import { Badge } from './Badge';
-export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
-    /** Alert child can be a String */
-    children: string;
-    /** Optional. Specifies the Alert theme defined in the design system */
-    theme?: Theme;
-    /** Optional. To show or hide icon */
-    showIcon?: boolean;
-}
 
-function getAlertIcon(theme: Theme) {
+function getAlertIcon(theme: ThemeTypes) {
     if (theme === 'success') return Check
     if (theme === 'danger' || theme === 'warning') return AlertTriangle
     return Activity
@@ -21,9 +14,9 @@ function getAlertIcon(theme: Theme) {
 /**
  * Alert component wraps all Alert styles in the design system
  */
-export const Alert: FC<AlertProps> = ({ children = 'Alert Message', theme = 'primary', showIcon = true }) => {
+export const Alert: FC<AlertProps> = ({ children = 'Alert Message', theme = 'primary', showIcon = true, className, style }) => {
     return (
-        <div className={`${getButtonTheme(theme)} py-2 px-4 text-base rounded-lg flex items-center space-x-2 bg-opacity-10`}>
+        <div role="alert" className={`${getButtonTheme(theme)} py-2 px-4 text-base rounded-lg flex items-center space-x-2 bg-opacity-10 ${className}`} style={style}>
             {showIcon && <Badge icon={getAlertIcon(theme)} theme={theme} />}
             <span className={`text-base ${getTypographyAlternateTheme(theme)}`}>{children}</span>
         </div>

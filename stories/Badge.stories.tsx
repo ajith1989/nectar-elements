@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Home } from 'react-feather';
-import { Badge, BadgeProps } from '../src/components/Badge';
+import { Badge } from '../src/components/Badge';
+import { BadgeProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Badge',

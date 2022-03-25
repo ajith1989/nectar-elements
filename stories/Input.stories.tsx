@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Input, InputProps } from '../src/components/Input';
+import { Input } from '../src/components/Input';
+import { InputProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Input',

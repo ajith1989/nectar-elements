@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Breadcrumb, BreadcrumbProps } from '../src/components/Breadcrumb';
+import { Breadcrumb } from '../src/components/Breadcrumb';
+import { BreadcrumbProps } from '../src/utils/types';
 
 const meta: Meta = {
     title: 'Breadcrumb',
