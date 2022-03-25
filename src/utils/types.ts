@@ -152,7 +152,17 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
         icon: Icon
     }>;
     /** Username shown on collapsed menu */
-    userName: string;
+    userName?: string;
+    /** Footer Title for Dashboard Layout */
+    footerTitle?: string;
+    /** Footer Description for Dashboard Layout */
+    footerDescription?:string;
+    /** Show Context Menu in Dashboard Layout */
+    showContext?:boolean;
+    /** Hide Context Toggle Menu in Dashboard Layout */
+    disableContextSwitch?: boolean,
+    /** Additional Action inside Context Menu of Dashboard Layout */
+    action?: ReactChild;
 }
 
 /** List */

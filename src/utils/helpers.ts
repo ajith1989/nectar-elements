@@ -1,6 +1,6 @@
-import { TypographyType, Theme, Size, Gradient } from './types';
+import { GradientTypes, Sizes, ThemeTypes, TypographyTypes } from "./enums";
 
-export function getTypographyStyle(type: TypographyType) {
+export function getTypographyStyle(type: TypographyTypes) {
     if (type === 'text') return 'text-base';
     if (type === 'caption') return 'text-6xl font-bold';
     if (type === 'header') return 'text-5xl';
@@ -13,7 +13,7 @@ export function getTypographyStyle(type: TypographyType) {
     return 'text-base'
 }
 
-export function getTypographyTheme(theme: Theme) {
+export function getTypographyTheme(theme: ThemeTypes) {
     if (theme === 'dark') return "text-dark";
     if (theme === 'primary') return "text-primary";
     if (theme === 'secondary') return "text-secondary";
@@ -26,7 +26,7 @@ export function getTypographyTheme(theme: Theme) {
     return "text-dark";
 }
 
-export function getTypographyAlternateTheme(theme: Theme) {
+export function getTypographyAlternateTheme(theme: ThemeTypes) {
     if (theme === 'dark') return "text-dark";
     if (theme === 'primary') return "text-primary";
     if (theme === 'secondary') return "text-secondary";
@@ -39,7 +39,7 @@ export function getTypographyAlternateTheme(theme: Theme) {
     return "text-dark";
 }
 
-export function getButtonTheme(theme: Theme) {
+export function getButtonTheme(theme: ThemeTypes) {
     if (theme === 'primary') return "bg-primary text-light";
     if (theme === 'secondary') return "bg-secondary text-light";
     if (theme === 'accent1') return "bg-accent1 text-dark";
@@ -52,7 +52,7 @@ export function getButtonTheme(theme: Theme) {
     return "bg-primary text-light";
 }
 
-export function getGhostButtonTheme(theme: Theme){
+export function getGhostButtonTheme(theme: ThemeTypes){
     if(theme === 'primary') return "border-primary text-primary border-2";
     if (theme === 'secondary') return "border-secondary text-secondary border-2";
     if (theme === 'accent1') return "border-accent1 text-dark border-2";
@@ -65,7 +65,7 @@ export function getGhostButtonTheme(theme: Theme){
     return "border-primary text-primary border-2";
 }
 
-export function getFontSize(size:Size) {
+export function getFontSize(size:Sizes) {
     if (size === 'medium') {
         return 'text-4xl';
     }
@@ -75,7 +75,7 @@ export function getFontSize(size:Size) {
     return 'text-6xl'
 }
 
-export function getGradientStyle(gradient:Gradient){
+export function getGradientStyle(gradient:GradientTypes){
     if( gradient === 'gradient1') return 'bg-gradient-to-r from-primary to-secondary';
     if( gradient === 'gradient2') return 'bg-gradient-to-r from-accent1 to-accent2';
     if(gradient === 'dark') return 'bg-gradient-to-r from-dark to-dark/80';

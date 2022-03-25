@@ -1,9 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Layout } from '../src/components/Layout';
-import { Menu } from '../src/components/Menu';
 import { Home, LogOut, Settings } from 'react-feather';
 import { LayoutProps } from '../src/utils/types';
+import { Button } from '../src/components/Button';
 
 
 const meta: Meta = {
@@ -28,9 +28,10 @@ export const DashboardLayout = Template.bind({});
 DashboardLayout.args = {
     type: 'dashboard',
     userName: 'Riyas Hameed',
-    appIcon: 'n.',
+    icon: 'n.',
     children: <div>Dashboard Layout</div>,
-    layoutMenuComponent: <Menu type="vertical-collapsed" items={[
+    action: <Button>Action</Button>,
+    menuItems: [
         {
             link: '/home',
             active: true,
@@ -46,7 +47,106 @@ DashboardLayout.args = {
             active: false,
             icon: LogOut
         }
-    ]} />,
-    contextMenuComponent: null
+    ],
+    contextItems: [
+        {
+            label: 'Home',
+            active: true
+        },
+        {
+            label: 'Settings',
+            active: false
+        },
+        {
+            label: 'Profile',
+            active: false
+        }
+    ],
+    footerTitle: 'nectar.',
+    footerDescription: 'Extracting Sweetness of Things'
+};
 
+export const DashboardLayoutWithoutContext = Template.bind({});
+
+DashboardLayoutWithoutContext.args = {
+    type: 'dashboard',
+    userName: 'Riyas Hameed',
+    icon: 'n.',
+    children: <div>Dashboard Layout</div>,
+    menuItems: [
+        {
+            link: '/home',
+            active: true,
+            icon: Home
+        },
+        {
+            link: '/settings',
+            active: false,
+            icon: Settings
+        },
+        {
+            link: '/logout',
+            active: false,
+            icon: LogOut
+        }
+    ],
+    contextItems: [
+        {
+            label: 'Home',
+            active: true
+        },
+        {
+            label: 'Settings',
+            active: false
+        },
+        {
+            label: 'Profile',
+            active: false
+        }
+    ],
+    showContext: false
+};
+
+
+
+export const DashboardLayoutWithoutToggle = Template.bind({});
+
+DashboardLayoutWithoutToggle.args = {
+    type: 'dashboard',
+    userName: 'Riyas Hameed',
+    icon: 'n.',
+    children: <div>Dashboard Layout</div>,
+    menuItems: [
+        {
+            link: '/home',
+            active: true,
+            icon: Home
+        },
+        {
+            link: '/settings',
+            active: false,
+            icon: Settings
+        },
+        {
+            link: '/logout',
+            active: false,
+            icon: LogOut
+        }
+    ],
+    contextItems: [
+        {
+            label: 'Home',
+            active: true
+        },
+        {
+            label: 'Settings',
+            active: false
+        },
+        {
+            label: 'Profile',
+            active: false
+        }
+    ],
+    showContext: false,
+    disableContextSwitch: true
 };
