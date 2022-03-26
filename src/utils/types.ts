@@ -198,7 +198,7 @@ export interface MenuProps extends HTMLAttributes<HTMLDivElement> {
         label?: string,
         link?: string,
         active: boolean,
-        icon: Icon
+        icon?: Icon
     }>;
 }
 
@@ -208,6 +208,18 @@ export interface MenuItemProps extends HTMLAttributes<HTMLDivElement> {
     active?:boolean;
     /** Action component inside Menu. Only for Expanded Menu */
     icon?: Icon
+}
+
+/** Modal */
+export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
+    /** Wrapper */
+    children:ReactChild;
+    /** Component inside Modal */
+    content:ReactChild;
+    /** Modal Title */
+    title?: string,
+    /** Additional Component */
+    extra?: ReactChild
 }
 
 /** Progress */
