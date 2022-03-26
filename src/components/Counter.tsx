@@ -7,9 +7,9 @@ import { Avatar } from './Avatar';
 /**
  * Counter component
  */
-export const Counter: FC<CounterProps> = ({ icon, label, count, theme = 'primary', border = true }) => {
+export const Counter: FC<CounterProps> = ({ icon, label, count, theme = 'primary', border = true, className, style, onClick }) => {
     return (
-        <div className={`flex items-center space-x-4 ${border ? "mb-6 shadow-xl shadow-primary/10" : "mb-0"} py-4 px-8 rounded-lg hover:bg-primary/10`}>
+        <div className={`flex items-center space-x-4 ${border ? "mb-6 shadow-xl shadow-primary/10" : "mb-0"} py-4 px-8 rounded-lg hover:bg-primary/10 ${className}`} style={style} onClick={onClick}>
             <Avatar icon={icon} theme={theme} />
             <div className="flex flex-col">
                 <span className={`text-sm ${getTypographyAlternateTheme(theme)}`}>{label}</span>
