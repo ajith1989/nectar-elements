@@ -131,21 +131,19 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     children: string;
     /** Layout Type */
     type: LayoutTypes;
-    /** Meta Component */
-    meta: ReactChild;
     /** Icon to be showed in the menu */
-    icon: string;
+    icon?: string;
     /** Icon to be showed in the menu */
-    title: string;
+    title?: string;
     /** Icon to be showed in the menu */
-    menuItems: Array<{
+    menuItems?: Array<{
         label?: string,
         link: string,
         active: boolean,
         icon: Icon
     }>;
     /** Icon to be showed in the menu */
-    contextItems: Array<{
+    contextItems?: Array<{
         label?: string,
         link: string,
         active: boolean,

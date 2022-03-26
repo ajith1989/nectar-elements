@@ -35,14 +35,16 @@ export const Layout: FC<LayoutProps> = ({
     if (type === 'auth') return (
         <div className="flex h-screen">
             <div className='w-96 m-auto'>
-                <Box>
-                    <Typography
-                        theme="light"
-                        type="title"
-                    >
-                        {title}
-                    </Typography>
-                </Box>
+                {title &&
+                    <Box>
+                        <Typography
+                            theme="light"
+                            type="title"
+                        >
+                            {title}
+                        </Typography>
+                    </Box>
+                }
                 <Spacer size='large' />
                 {children}
             </div>
@@ -55,12 +57,15 @@ export const Layout: FC<LayoutProps> = ({
             <div className="w-16 h-screen bg-gradient-to-b from-primary to-secondary px-2 py-8 rounded-r-lg shrink-0">
                 <div className='flex flex-col justify-between h-full'>
                     <div className='flex flex-col space-y-4'>
-                        <a href="/">
-                            <div className={`flex items-center justify-center cursor-pointer`}>
-                                <Typography type='title' theme='light'>{icon}</Typography>
-                            </div>
-                        </a>
-                        <Menu type='vertical-collapsed' items={menuItems} />
+                        {icon &&
+                            <a href="/">
+                                <div className={`flex items-center justify-center cursor-pointer`}>
+                                    <Typography type='title' theme='light'>{icon}</Typography>
+                                </div>
+                            </a>
+                        }
+
+                        {menuItems && <Menu type='vertical-collapsed' items={menuItems} />}
                     </div>
                     <div className="flex flex-col items-center space-y-2">
                         <div className='transform -rotate-90 py-4 text-light text-xs'>{userName}</div>
@@ -76,7 +81,7 @@ export const Layout: FC<LayoutProps> = ({
                 <div className="w-52 h-screen bg-light px-6 pb-8 pt-24 rounded-r-lg shrink-0">
                     <div className="flex flex-col justify-between h-full">
                         <div className='flex flex-col space-y-6'>
-                            <Menu type='vertical-expanded' items={contextItems} />
+                            {contextItems && <Menu type='vertical-expanded' items={contextItems} />}
                             {action}
                         </div>
                         <div className="flex flex-col space-y-1 opacity-60">
