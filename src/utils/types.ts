@@ -138,7 +138,8 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     /** Icon to be showed in the menu */
     menuItems?: Array<{
         label?: string,
-        link: string,
+        link?: string,
+        onClick?: React.MouseEventHandler<HTMLDivElement>,
         active: boolean,
         icon: Icon
     }>;
@@ -193,8 +194,9 @@ export interface MenuProps extends HTMLAttributes<HTMLDivElement> {
     type?: MenuTypes;
     /** Menu Items */
     items: Array<{
+        onClick?: React.MouseEventHandler<HTMLDivElement>,
         label?: string,
-        link: string,
+        link?: string,
         active: boolean,
         icon: Icon
     }>;

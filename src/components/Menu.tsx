@@ -23,9 +23,14 @@ export const Menu: FC<MenuProps> = ({ type = 'vertical-collapsed', items }) => {
             {
                 items &&
                 items.map(item => (
-                    <a href={item.link || '#'} key={cuid()}>
-                        <MenuItem active={item.active} icon={item.icon} />
-                    </a>
+                    item?.link ?
+                        <a href={item.link} key={cuid()}>
+                            <MenuItem active={item.active} icon={item.icon} />
+                        </a>
+                        :
+                        <div onClick={item.onClick} key={cuid()}>
+                            <MenuItem active={item.active} icon={item.icon} />
+                        </div>
                 ))}
         </div>
     );
