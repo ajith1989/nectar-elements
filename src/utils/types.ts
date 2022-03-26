@@ -148,7 +148,7 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
         label?: string,
         link: string,
         active: boolean,
-        icon: Icon
+        icon?: Icon
     }>;
     /** Username shown on collapsed menu */
     userName?: string;
