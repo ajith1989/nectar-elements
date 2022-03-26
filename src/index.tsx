@@ -11,6 +11,7 @@ export * from './components/Input';
 export * from './components/Layout';
 export * from './components/List';
 export * from './components/Menu';
+export * from './components/Modal';
 export * from './components/Progress';
 export * from './components/Quote';
 export * from './components/Spacer';
