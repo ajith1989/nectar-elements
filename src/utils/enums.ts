@@ -7,3 +7,4 @@ export type InputTypes = 'text' | 'password' | 'select' | 'checkbox' | 'radio' |
 export type ListTypes = 'full' | 'compact' | 'thumbnail';
 export type LayoutTypes = 'dashboard' | 'auth';
 export type MenuTypes = 'vertical-collapsed' | 'vertical-expanded';
+export type RatingTypes = 'tag' | 'read-only' | 'full';

@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactChild } from "react";
-import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes } from "./enums";
+import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes } from "./enums";
 
 /** Alert */
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
@@ -244,6 +244,14 @@ export interface QuoteProps extends HTMLAttributes<HTMLDivElement> {
     size?: Sizes;
 }
 
+/** Rating */
+export interface RatingProps extends HTMLAttributes<HTMLDivElement> {
+    /** Rating Value */
+    value: number;
+    /** Rating Type */
+    type: RatingTypes;
+}
+
 /** Spacer */
 export interface SpacerProps extends HTMLAttributes<HTMLDivElement> {
     /** Size for Spacer */
@@ -278,6 +286,18 @@ export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
     tag?: string;
     /** Thumbnail Image Component */
     image?: ReactChild;
+}
+
+/** Timeline */
+export interface TimelineProps extends HTMLAttributes<HTMLDivElement> {
+    /** Timeline Items */
+    items: Array<
+        {
+            time: string,
+            title: string,
+            description: string
+        }
+    >
 }
 
 /** Toggle */
