@@ -8,12 +8,12 @@ import { ListProps } from '../utils/types';
 /**
  * List component wraps all button styles in the design system
  */
-export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, image, theme = "primary", footer, layout = 'full', tagTheme = 'primary', link, onClick }) => {
+export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, image, theme = "primary", footer, layout = 'full', tagTheme = 'primary', link, onClick, clickable = false }) => {
 
     if (layout === 'thumbnail') {
         return (
             <a href={link || undefined}>
-                <div role="list" className={`relative shadow-lg w-full h-96 group ${link || onClick ? 'cursor-pointer' : 'cursor-default'}`}>
+                <div role="list" className={`relative shadow-lg w-full h-96 group ${link || onClick || clickable ? 'cursor-pointer' : 'cursor-default'}`}>
                     {image ?
                         <div className="absolute inset-0 rounded-lg overflow-hidden">{image}</div>
                         :
@@ -50,7 +50,7 @@ export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, i
 
     return (
         <a href={link || undefined}>
-            <div role="list" className={`flex flex-col border border-light shadow-sm ${link || onClick ? 'cursor-pointer' : 'cursor-default'}`}>
+            <div role="list" className={`flex flex-col border border-light shadow-sm ${link || onClick || clickable ? 'cursor-pointer' : 'cursor-default'}`}>
                 <div className='flex items-center justify-between px-4 py-2'>
                     <div className='flex items-center space-x-4'>
                         {icon && <Avatar icon={icon} theme={theme} />}

@@ -188,6 +188,8 @@ export interface ListProps extends HTMLAttributes<HTMLDivElement> {
     layout?: ListTypes;
     /** List Link */
     link?: string;
+    /** Clickable or not */
+    clickable?: boolean;
 }
 
 /** Menu */
@@ -290,6 +292,9 @@ export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
     image?: ReactChild;
     /** Thumbnail Link */
     link?: string;
+    /** Clickable or not */
+    clickable?: boolean;
+
 }
 
 /** Timeline */

@@ -6,10 +6,10 @@ import { Typography } from './Typography';
 /**
  * Box component wraps all box styles in the design system
  */
-export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image, link, onClick }) => {
+export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image, link, onClick, clickable }) => {
     return (
         <a href={link || undefined}>
-            <div className={`relative shadow-lg w-full h-96 group ${link || onClick ? 'cursor-pointer' : 'cursor-default'}`} onClick={onClick}>
+            <div className={`relative shadow-lg w-full h-96 group ${link || onClick || clickable ? 'cursor-pointer' : 'cursor-default'}`} onClick={onClick}>
                 {image ?
                     <div className="absolute inset-0 rounded-lg overflow-hidden">{image}</div>
                     :
