@@ -19,7 +19,7 @@ export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image, 
                 }
                 <div className="absolute bottom-0 w-full bg-gradient-to-t from-dark p-4 rounded-b-lg">
                     <div className='max-w-max'>
-                        <Typography type='body' theme='light'>{title}</Typography>
+                        {title && <Typography type='body' theme='light'>{title}</Typography>}
                         {description && <Typography type='small' theme='light'>{description}</Typography>}
                         {
                             tag &&

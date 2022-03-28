@@ -289,7 +289,7 @@ export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
 /** Thumbnail */
 export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
     /** Thumbnail Title */
-    title: string;
+    title?: string;
     /** Thumbnail Description */
     description?: string;
     /** Thumbnail Tag */
