@@ -72,7 +72,7 @@ export const Layout: FC<LayoutProps> = ({
                         <MenuItem icon={User} />
                         {!disableContextSwitch &&
                             <div onClick={toggleContextMenu} className="w-full">
-                                {showContext ? <MenuItem icon={ChevronLeft} /> : <MenuItem icon={ChevronRight} />}
+                                {contextVisible ? <MenuItem icon={ChevronLeft} /> : <MenuItem icon={ChevronRight} />}
                             </div>}
                     </div>
                 </div>

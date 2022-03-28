@@ -1,3 +1,4 @@
+import cuid from 'cuid';
 import React, { FC } from 'react';
 import { Check } from 'react-feather';
 import { TimelineProps } from '../utils/types';
@@ -6,7 +7,7 @@ import { Tag } from './Tag';
 import { Typography } from './Typography';
 
 /**
- * Tag component wraps all tag styles in the design system
+ * Timeline component
  */
 export const Timeline: FC<TimelineProps> = ({ items }) => {
     return (
@@ -14,7 +15,7 @@ export const Timeline: FC<TimelineProps> = ({ items }) => {
             {
                 items &&
                 items.map(item => (
-                    <div className='mb-10 flex items-start space-x-6 -ml-4'>
+                    <div className='mb-10 flex items-start space-x-6 -ml-4' key={cuid()}>
                         <Badge icon={Check} theme="success" />
                         <div className='flex flex-col space-y-1'>
                             <div className='inline-block'>

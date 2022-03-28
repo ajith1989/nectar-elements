@@ -26,3 +26,12 @@ ThumbnailWithTag.args = {
     description: 'Description',
     tag: 'featured'
 };
+
+export const ThumbnailWithLink = Template.bind({});
+
+ThumbnailWithLink.args = {
+    title: 'Primary',
+    description: 'Description',
+    tag: 'featured',
+    link: '/'
+};

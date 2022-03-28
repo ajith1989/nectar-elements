@@ -186,6 +186,8 @@ export interface ListProps extends HTMLAttributes<HTMLDivElement> {
     icon?: Icon;
     /** Optional. Prefix icon before the list component */
     layout?: ListTypes;
+    /** List Link */
+    link?: string;
 }
 
 /** Menu */
@@ -286,6 +288,8 @@ export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
     tag?: string;
     /** Thumbnail Image Component */
     image?: ReactChild;
+    /** Thumbnail Link */
+    link?: string;
 }
 
 /** Timeline */
