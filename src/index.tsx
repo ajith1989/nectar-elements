@@ -10,6 +10,7 @@ export * from './components/Hyperlink';
 export * from './components/Input';
 export * from './components/Layout';
 export * from './components/List';
+export * from './components/Loader';
 export * from './components/Menu';
 export * from './components/Modal';
 export * from './components/Progress';

@@ -192,6 +192,12 @@ export interface ListProps extends HTMLAttributes<HTMLDivElement> {
     clickable?: boolean;
 }
 
+/** Loader */
+export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
+    /** Message */
+    message?: string;
+}
+
 /** Menu */
 export interface MenuProps extends HTMLAttributes<HTMLDivElement> {
     /** Type of Menu */
