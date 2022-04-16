@@ -22,7 +22,8 @@ export const Layout: FC<LayoutProps> = ({
     footerDescription,
     showContext = true,
     disableContextSwitch = false,
-    action
+    action,
+    pageHeader
 }) => {
 
     const [contextVisible, setContextVisible] = useState(showContext);
@@ -91,8 +92,9 @@ export const Layout: FC<LayoutProps> = ({
                     </div>
                 </div>
             }
-            <div className="p-4 h-screen flex-grow overflow-y-auto">
-                {children}
+            <div className="h-screen flex-grow overflow-y-auto">
+                {pageHeader}
+                <div className='p-4'>{children}</div>
             </div>
         </div>
     );

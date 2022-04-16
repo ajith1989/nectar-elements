@@ -8,7 +8,7 @@ import { CommandPaletteProps } from '../utils/types';
 /**
  * Command Palette Component
  */
-export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
+export const CommandPalette: FC<CommandPaletteProps> = ({ onSearch }) => {
     let [isOpen, setIsOpen] = useState(false)
 
     const closeModal = () => setIsOpen(false)
@@ -18,7 +18,7 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
     return (
         <div>
             <div onClick={openModal}>
-                {children}
+                <Button icon={Search} theme='dark'>{`Search ⌘+K`}</Button>
             </div>
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog
@@ -60,7 +60,7 @@ export const CommandPalette: FC<CommandPaletteProps> = ({ children }) => {
                                     <div className='flex-grow'>
                                         <Input type='text' name='search' placeholder='Search Anything' register={() => { }} />
                                     </div>
-                                    <Button theme='primary' icon={Search}>Search</Button>
+                                    <Button onClick={onSearch} theme='primary' icon={Search}>Search</Button>
                                 </div>
                             </div>
                         </Transition.Child>

@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactChild } from "react";
-import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes } from "./enums";
+import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes, WeatherConditions } from "./enums";
 
 /** Alert */
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
@@ -64,8 +64,8 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 /** Command Palette */
 export interface CommandPaletteProps extends HTMLAttributes<HTMLDivElement> {
-    /** Trigger component for Command Palette */
-    children: ReactChild;
+    /** Search Function */
+    onSearch?: ()=>void;
 }
 
 /** Counter */
@@ -162,6 +162,8 @@ export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     disableContextSwitch?: boolean,
     /** Additional Action inside Context Menu of Dashboard Layout */
     action?: ReactChild;
+    /** Page Header Component */
+    pageHeader?: ReactChild
 }
 
 /** List */
@@ -230,6 +232,16 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     title?: string,
     /** Additional Component */
     extra?: ReactChild
+}
+
+/** Page Header */
+export interface PageHeaderProps extends HTMLAttributes<HTMLDivElement> {
+    /** Title */
+    title: string;
+    /** Right Side Components */
+    extra?: Array<ReactChild>;
+    /** Show or Hide Back Button */
+    showBackButton?: boolean
 }
 
 /** Progress */
@@ -356,6 +368,18 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     icon?: Icon;
     /** Optional. Specifies the typography type defined in the design system */
     type?: TypographyTypes
+}
+
+/** Weather */
+export interface WeatherProps extends HTMLAttributes<HTMLDivElement> {
+    /** Current Temperature */
+    temperature: number;
+    /** Weather Location */
+    location: string;
+    /** Current Weather Condition */
+    condition: WeatherConditions;
+    /** Weather Unit */
+    unit?: string;
 }
 
 interface IconProps {

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Layout } from '../src/components/Layout';
-import { Home, LogOut, Settings } from 'react-feather';
+import { Globe, Home, LogOut, Settings } from 'react-feather';
 import { LayoutProps } from '../src/utils/types';
 import { Button } from '../src/components/Button';
+import { PageHeader } from '../src/components/PageHeader';
+import { CommandPalette } from '../src/components/CommandPalette';
+import { Weather } from '../src/components/Weather';
 
 
 const meta: Meta = {
@@ -21,6 +24,54 @@ AuthLayout.args = {
     type: 'auth',
     title: 'Nectar',
     children: <div>Auth Layout</div>
+};
+
+export const DashboardLayoutWithPageHeader = Template.bind({});
+
+DashboardLayoutWithPageHeader.args = {
+    type: 'dashboard',
+    userName: 'Riyas Hameed',
+    icon: 'n.',
+    children: <div>Dashboard Layout</div>,
+    action: <Button>Action</Button>,
+    menuItems: [
+        {
+            link: '/home',
+            active: true,
+            icon: Home
+        },
+        {
+            link: '/settings',
+            active: false,
+            icon: Settings
+        },
+        {
+            link: '/logout',
+            active: false,
+            icon: LogOut
+        }
+    ],
+    contextItems: [
+        {
+            label: 'Home',
+            active: true
+        },
+        {
+            label: 'Settings',
+            active: false
+        },
+        {
+            label: 'Profile',
+            active: false
+        }
+    ],
+    footerTitle: 'nectar.',
+    footerDescription: 'Extracting Sweetness of Things',
+    pageHeader: <PageHeader title="Dashboard" extra={[
+        <Weather location='DXB' temperature={28} condition='drizzle' />,
+        <CommandPalette key="command-palette" />,
+        <Button icon={Globe} key="internationalization">EN</Button>
+    ]} />
 };
 
 export const DashboardLayout = Template.bind({});
@@ -104,7 +155,8 @@ DashboardLayoutWithoutContext.args = {
             active: false
         }
     ],
-    showContext: false
+    showContext: false,
+    disableContextSwitch: true
 };
 
 
