@@ -114,7 +114,8 @@ DashboardLayout.args = {
         }
     ],
     footerTitle: 'nectar.',
-    footerDescription: 'Extracting Sweetness of Things'
+    footerDescription: 'Extracting Sweetness of Things',
+    disableContextSwitch: false
 };
 
 export const DashboardLayoutWithoutContext = Template.bind({});
