@@ -128,7 +128,7 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
 /** Layout */
 export interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     /** Content part of Layout component */
-    children: string;
+    children: ReactChild;
     /** Layout Type */
     type: LayoutTypes;
     /** Icon to be showed in the menu */
