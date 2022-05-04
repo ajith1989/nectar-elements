@@ -60,7 +60,7 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     theme?: ThemeTypes;
     /** Optional. Prefix icon before the button component */
     icon?: Icon;
-    /** */
+    /* Loading State * */
     loading?: boolean;
     /** Skelton State */
     skeleton?: boolean
@@ -84,6 +84,10 @@ export interface CounterProps extends HTMLAttributes<HTMLDivElement> {
     theme?: ThemeTypes;
     /** Optional. With or without border */
     border?: boolean;
+    /* Loading State * */
+    loading?: boolean;
+    /** Skelton State */
+    skeleton?: boolean
 }
 
 
