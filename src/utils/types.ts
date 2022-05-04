@@ -60,6 +60,10 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     theme?: ThemeTypes;
     /** Optional. Prefix icon before the button component */
     icon?: Icon;
+    /** */
+    loading?: boolean;
+    /** Skelton State */
+    skeleton?: boolean
 }
 
 /** Command Palette */
