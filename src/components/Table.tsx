@@ -8,7 +8,18 @@ import { TableProps } from '../utils/types';
 /**
  * Box component wraps all box styles in the design system
  */
-export const Table: FC<TableProps> = ({ headers, data }) => {
+export const Table: FC<TableProps> = ({ headers, data, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div className='flex flex-col space-y-4'>
+                <div className='h-12 w-full bg-gradient-to-r from-primary to-secondary animate-pulse rounded-sm' />
+                <div className='h-6 w-3/4 bg-light animate-pulse rounded-sm' />
+                <div className='h-6 w-1/2 bg-light animate-pulse rounded-sm' />
+                <div className='h-6 w-1/4 bg-light animate-pulse rounded-sm' />
+            </div>
+        )
+    }
 
     if (data?.length <= 0) return <Alert showIcon theme="warning">{EMPTY_DATA}</Alert>
 

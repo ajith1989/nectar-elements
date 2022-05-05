@@ -1,13 +1,29 @@
 import React, { FC } from 'react';
-import { getTypographyAlternateTheme } from '../utils/helpers';
+import { getButtonTheme, getTypographyAlternateTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
-import { TrendingDown, TrendingUp } from 'react-feather';
+import { Loader, TrendingDown, TrendingUp } from 'react-feather';
 import { TrendProps } from '../utils/types';
 
 /**
  * Box component wraps all box styles in the design system
  */
-export const Trend: FC<TrendProps> = ({ icon, label, meta, count, theme = 'primary', border = true, trend = 'up', extra }) => {
+export const Trend: FC<TrendProps> = ({ icon, label, meta, count, theme = 'primary', border = true, trend = 'up', extra, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div className={`flex items-center space-x-4 ${border ? "mb-6 shadow-xl shadow-primary/10" : "mb-0"} py-4 px-8 rounded-lg hover:bg-primary/10`}>
+                <Avatar icon={Loader} theme={theme} className="animate-pulse" />
+                <div className="flex flex-col">
+                    <span className={`text-sm ${getTypographyAlternateTheme(theme)}`}>Loading</span>
+                    <div className="relative mt-2">
+                        <div className={`h-1 w-full opacity-20 absolute rounded-lg ${getButtonTheme(theme)}`} />
+                        <div className={`h-1 w-1/2 absolute rounded-lg ${getButtonTheme(theme)}`} />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className={`flex items-center justify-between ${border ? "mb-6 shadow-xl shadow-primary/10" : "mb-0"} py-2 px-4 ${extra ? "rounded-t-lg" : "rounded-lg"} hover:bg-primary/10 relative`}>
             <div className="flex items-center space-x-4">

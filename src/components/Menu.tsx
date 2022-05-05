@@ -7,7 +7,17 @@ import { MenuItem } from './MenuItem';
 /**
  * Layout will be rendered based on Layout Type
  */
-export const Menu: FC<MenuProps> = ({ type = 'vertical-collapsed', items }) => {
+export const Menu: FC<MenuProps> = ({ type = 'vertical-collapsed', items, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div className='flex flex-col space-y-4'>
+                <div className='h-6 w-3/4 bg-light animate-pulse rounded-sm' />
+                <div className='h-6 w-1/2 bg-light animate-pulse rounded-sm' />
+                <div className='h-6 w-1/4 bg-light animate-pulse rounded-sm' />
+            </div>
+        )
+    }
 
     if (type === 'vertical-expanded') return (
         <div className="flex flex-col space-y-4">

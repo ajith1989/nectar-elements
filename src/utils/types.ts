@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactChild } from "react";
+import { HTMLAttributes, MouseEventHandler, ReactChild } from "react";
 import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes, WeatherConditions } from "./enums";
 
 /** Alert */
@@ -9,6 +9,8 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
     theme?: ThemeTypes;
     /** Optional. To show or hide icon */
     showIcon?: boolean;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Avatar */
@@ -21,6 +23,8 @@ export interface AvatarProps extends HTMLAttributes<HTMLSpanElement> {
     theme?: ThemeTypes;
     /** Optional. Icon instead of text for the Avatar component */
     icon?: Icon;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Badge */
@@ -31,6 +35,8 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
     theme?: ThemeTypes;
     /** Optional. Icon instead of text for the Badge component */
     icon?: Icon;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Box */
@@ -39,6 +45,8 @@ export interface BoxProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactChild | string;
     /** Optional. Specifies the Box gradient defined in the design system */
     gradient?: GradientTypes;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Breadcrumbs */
@@ -60,10 +68,8 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     theme?: ThemeTypes;
     /** Optional. Prefix icon before the button component */
     icon?: Icon;
-    /* Loading State * */
+    /** Loading State */
     loading?: boolean;
-    /** Skelton State */
-    skeleton?: boolean
 }
 
 /** Command Palette */
@@ -84,10 +90,8 @@ export interface CounterProps extends HTMLAttributes<HTMLDivElement> {
     theme?: ThemeTypes;
     /** Optional. With or without border */
     border?: boolean;
-    /* Loading State * */
+    /** Loading State */
     loading?: boolean;
-    /** Skelton State */
-    skeleton?: boolean
 }
 
 
@@ -200,6 +204,8 @@ export interface ListProps extends HTMLAttributes<HTMLDivElement> {
     link?: string;
     /** Clickable or not */
     clickable?: boolean;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Loader */
@@ -220,6 +226,8 @@ export interface MenuProps extends HTMLAttributes<HTMLDivElement> {
         active: boolean,
         icon?: Icon
     }>;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Menu Item */
@@ -239,7 +247,14 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     /** Modal Title */
     title?: string,
     /** Additional Component */
-    extra?: ReactChild
+    extra?: ReactChild;
+    /** Open or Close State */
+    open?: boolean;
+    /** Function to open modal. Set open state to true */
+    openModal?: MouseEventHandler<HTMLDivElement> | undefined;
+    /** Function to close modal. Set open state to false */
+    closeModal: (value: boolean) => void;
+
 }
 
 /** Page Header */
@@ -249,7 +264,9 @@ export interface PageHeaderProps extends HTMLAttributes<HTMLDivElement> {
     /** Right Side Components */
     extra?: Array<ReactChild>;
     /** Show or Hide Back Button */
-    showBackButton?: boolean
+    showBackButton?: boolean;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Progress */
@@ -262,6 +279,8 @@ export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
     theme?: ThemeTypes;
     /** Optional. To show or hide percentage */
     showPercentage?: boolean;
+   /** Loading State */
+   loading?: boolean;
 }
 
 /** Quote */
@@ -291,9 +310,11 @@ export interface SpacerProps extends HTMLAttributes<HTMLDivElement> {
 /** Table */
 export interface TableProps extends HTMLAttributes<HTMLDivElement> {
     /** Header Columns */
-    headers: string[],
+    headers: string[];
     /** Data Columns */
-    data: string[][]
+    data: string[][];
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Tag */
@@ -304,6 +325,8 @@ export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
     theme?: ThemeTypes;
     /** Optional. Prefix icon before the tag component */
     icon?: Icon;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Thumbnail */
@@ -320,6 +343,8 @@ export interface ThumbnailProps extends HTMLAttributes<HTMLDivElement> {
     link?: string;
     /** Clickable or not */
     clickable?: boolean;
+    /** Loading State */
+    loading?: boolean;
 
 }
 
@@ -332,7 +357,9 @@ export interface TimelineProps extends HTMLAttributes<HTMLDivElement> {
             title: string,
             description: string
         }
-    >
+    >;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Toggle */
@@ -355,15 +382,24 @@ export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
 
 /** Trend */
 export interface TrendProps extends HTMLAttributes<HTMLDivElement> {
-    /** Box child can be a React Node or a String */
+    /** Icon */
     icon?: Icon;
+    /** Label */
     label: string;
+    /** Meta Information */
     meta: string;
+    /** Count */
     count: number;
+    /** Theme */
     theme?: ThemeTypes;
+    /** Border State */
     border?: boolean;
+    /** up or down states */
     trend?: TrendTypes;
+    /** Extra content */
     extra?: string;
+    /** Loading State */
+    loading?: boolean;
 }
 
 /** Typography */
@@ -388,6 +424,8 @@ export interface WeatherProps extends HTMLAttributes<HTMLDivElement> {
     condition: WeatherConditions;
     /** Weather Unit */
     unit?: string;
+    /** Loading State */
+    loading?: boolean;
 }
 
 interface IconProps {

@@ -6,7 +6,18 @@ import { Typography } from './Typography';
 /**
  * Box component wraps all box styles in the design system
  */
-export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image, link, onClick, clickable }) => {
+export const Thumbnail: FC<ThumbnailProps> = ({ title, description, tag, image, link, onClick, clickable, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div className='flex flex-col space-y-4 h-96'>
+                <div className='h-[80%] w-full bg-light animate-pulse rounded-lg' />
+                <div className='h-[15%] w-3/4 bg-gradient-to-r from-primary to-secondary animate-pulse rounded-lg' />
+                <div className='h-[5%] w-1/2 bg-light animate-pulse rounded-md' />
+            </div>
+        )
+    }
+
     return (
         <a href={link || undefined}>
             <div className={`relative shadow-lg w-full h-96 group ${link || onClick || clickable ? 'cursor-pointer' : 'cursor-default'}`} onClick={onClick}>

@@ -23,15 +23,7 @@ const IconComponent = ({ children, icon }: {
 /**
  * Button component wraps all button styles in the design system
  */
-export const Button: FC<ButtonProps> = ({ children, theme = "primary", icon, ghost = false, onClick, className, style, loading = false, skeleton = false }) => {
-
-    if (skeleton) {
-        return (
-            <button className={`${ghost ? getGhostButtonTheme(theme) : getButtonTheme(theme)} items-center space-x-2 px-4 py-2 rounded-md inline-flex cursor-not-allowed bg-opacity-50 animate-pulse`}>
-                <div className='p-1 w-20 h-6 bg-transparent'></div>
-            </button>
-        )
-    }
+export const Button: FC<ButtonProps> = ({ children, theme = "primary", icon, ghost = false, onClick, className, style, loading = false }) => {
 
     if (loading) {
         return (

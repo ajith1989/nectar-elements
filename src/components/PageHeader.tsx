@@ -6,7 +6,17 @@ import { Typography } from './Typography';
 /**
  * Page Header
  */
-export const PageHeader: FC<PageHeaderProps> = ({ title = 'Title', extra, showBackButton = true }) => {
+export const PageHeader: FC<PageHeaderProps> = ({ title = 'Title', extra, showBackButton = true, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div className='w-full flex items-center justify-between p-4 border-b border-light shadow-sm rounded-lg'>
+                <div className='h-6 w-3/4 bg-light animate-pulse rounded-sm' />
+                <div className='h-4 w-4 bg-light animate-pulse rounded-sm' />
+            </div>
+        )
+    }
+
     return (
         <div className='w-full flex items-center justify-between p-2 border-b border-light shadow-sm rounded-lg'>
             <div className='flex items-center space-x-2'>

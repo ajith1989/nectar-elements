@@ -1,24 +1,19 @@
-import React, { FC, Fragment, useState } from 'react'
+import React, { FC, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { X } from 'react-feather'
 import { ModalProps } from '../utils/types';
 
 /**
- * Command Palette Component
+ * Modal Component
  */
-export const Modal: FC<ModalProps> = ({ children, title, content, extra }) => {
-    let [isOpen, setIsOpen] = useState(false)
-
-    const closeModal = () => setIsOpen(false)
-    const openModal = () => setIsOpen(true)
-
+export const Modal: FC<ModalProps> = ({ children, title, content, extra, open = false, openModal, closeModal }) => {
 
     return (
         <div>
             <div onClick={openModal}>
                 {children}
             </div>
-            <Transition appear show={isOpen} as={Fragment}>
+            <Transition appear show={open} as={Fragment}>
                 <Dialog
                     as="div"
                     className="fixed inset-0 z-10 overflow-y-auto"
@@ -63,7 +58,7 @@ export const Modal: FC<ModalProps> = ({ children, title, content, extra }) => {
                                             {title}
                                         </Dialog.Title>
                                     }
-                                    <div className='text-primary cursor-pointer text-xs bg-light rounded p-2 hover:text-dark' onClick={closeModal}>
+                                    <div className='text-primary cursor-pointer text-xs bg-light rounded p-2 hover:text-dark' onClick={() => closeModal}>
                                         <X />
                                     </div>
                                 </div>

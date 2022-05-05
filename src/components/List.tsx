@@ -8,7 +8,24 @@ import { ListProps } from '../utils/types';
 /**
  * List component wraps all button styles in the design system
  */
-export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, image, theme = "primary", footer, layout = 'full', tagTheme = 'primary', link, onClick, clickable = false }) => {
+export const List: FC<ListProps> = ({ title, subTitle, description, tag, icon, image, theme = "primary", footer, layout = 'full', tagTheme = 'primary', link, onClick, clickable = false, loading = false }) => {
+
+    if (loading) {
+        return (
+            <div role="list" className={`flex flex-col border border-light shadow-sm`}>
+                <div className='flex items-center justify-between px-4 py-2'>
+                    <div className='flex flex-1 items-center space-x-4'>
+                        {icon && <Avatar icon={icon} theme={theme} loading={true} />}
+                        <div className={`flex-1 flex flex-col ${layout === 'compact' ? 'space-y-1' : 'space-y-2'}`}>
+                            <div className='h-4 w-1/2 bg-light animate-pulse rounded-md' />
+                            <div className='h-4 w-1/4 bg-light animate-pulse rounded-md' />
+                        </div>
+                    </div>
+                    <div className='h-4 w-4 bg-light animate-pulse rounded-sm' />
+                </div>
+            </div>
+        )
+    }
 
     if (layout === 'thumbnail') {
         return (
