@@ -18,6 +18,7 @@ export * from './components/Progress';
 export * from './components/Quote';
 export * from './components/Rating';
 export * from './components/Spacer';
+export * from './components/Tabs';
 export * from './components/Table';
 export * from './components/Thumbail';
 export * from './components/Timeline';

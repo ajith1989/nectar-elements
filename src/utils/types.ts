@@ -309,6 +309,22 @@ export interface SpacerProps extends HTMLAttributes<HTMLDivElement> {
     size: Sizes;
 }
 
+/** Tab */
+export interface TabProps extends HTMLAttributes<HTMLDivElement> {
+    /** Tab List */
+    list: string[];
+    /** Panel List */
+    panels: ReactChild[];
+    /** Direction */
+    direction?: DirectionTypes;
+    /** Default Index */
+    defaultIndex?: number;
+    /** Selected Index */
+    selectedIndex?: number;
+    /** On Tab Change */
+    onTabChange?: ((index: number) => void) | undefined
+}
+
 /** Table */
 export interface TableProps extends HTMLAttributes<HTMLDivElement> {
     /** Header Columns */
