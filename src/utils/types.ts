@@ -1,5 +1,5 @@
 import { HTMLAttributes, MouseEventHandler, ReactChild } from "react";
-import { GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes, WeatherConditions } from "./enums";
+import { DirectionTypes, GradientTypes, InputTypes, LayoutTypes, ListTypes, MenuTypes, RatingTypes, Sizes, ThemeTypes, TrendTypes, TypographyTypes, WeatherConditions } from "./enums";
 
 /** Alert */
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
@@ -134,7 +134,9 @@ export interface InputProps extends HTMLAttributes<HTMLInputElement> {
     /** Options for input component */
     options?: string[],
     /** Specifies multiple or not */
-    multiple?: boolean
+    multiple?: boolean,
+    /** Direction */
+    direction?: DirectionTypes;
 }
 
 /** Layout */
@@ -428,6 +430,8 @@ export interface UploadProps extends HTMLAttributes<HTMLLabelElement> {
     theme?: ThemeTypes;
     /** Accepted file types */
     accept?: string;
+    /** Direction */
+    direction?: DirectionTypes;
 }
 
 /** Weather */

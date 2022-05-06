@@ -8,4 +8,5 @@ export type ListTypes = 'full' | 'compact' | 'thumbnail';
 export type LayoutTypes = 'dashboard' | 'auth';
 export type MenuTypes = 'vertical-collapsed' | 'vertical-expanded';
 export type RatingTypes = 'tag' | 'read-only' | 'full';
+export type DirectionTypes = 'vertical' | 'horizontal';
 export type WeatherConditions = 'drizzle' | 'lightning' | 'rain' | 'snow' | 'cloudy' | 'sunny' | 'storm' ;

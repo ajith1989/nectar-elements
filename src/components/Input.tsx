@@ -1,13 +1,15 @@
 import React, { FC, ReactChild } from 'react';
+import { DirectionTypes } from '../utils/enums';
 import { InputProps } from '../utils/types';
 
 
 
-const InputWrapper = ({ label, children }: {
+const InputWrapper = ({ label, children, direction }: {
     label?: string;
     children: ReactChild;
+    direction: DirectionTypes
 }) => (
-    <label className="flex flex-col space-y-1">
+    <label className={`flex ${direction === 'vertical' ? "flex-col space-y-1" : "flex-row space-x-2 items-center"}`}>
         {label && <span className="text-sm opacity-60">{label}</span>}
         {children}
     </label>
@@ -29,11 +31,12 @@ export const Input: FC<InputProps> = ({
     register,
     disabled = false,
     options = [],
-    multiple = false
+    multiple = false,
+    direction = 'vertical'
 }) => {
     if (type === 'select') {
         return (
-            <InputWrapper label={label}>
+            <InputWrapper label={label} direction={direction}>
                 <select
                     multiple={multiple}
                     placeholder={placeholder}
@@ -61,7 +64,7 @@ export const Input: FC<InputProps> = ({
 
     if (type === 'textarea') {
         return (
-            <InputWrapper label={label}>
+            <InputWrapper label={label} direction={direction}>
                 <textarea
                     placeholder={placeholder}
                     {...register(name, {
@@ -79,7 +82,7 @@ export const Input: FC<InputProps> = ({
     }
 
     return (
-        <InputWrapper label={label}>
+        <InputWrapper label={label} direction={direction}>
             <input
                 className="placeholder-shown:font-normal"
                 type={type}

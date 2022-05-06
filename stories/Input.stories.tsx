@@ -23,6 +23,18 @@ Text.args = {
     required: true
 };
 
+export const TextHorizontal = Template.bind({});
+
+TextHorizontal.args = {
+    type: 'text',
+    label: 'Input Text',
+    placeholder: 'Input Text',
+    name: 'text',
+    register: () => { },
+    required: true,
+    direction: 'horizontal'
+};
+
 export const Password = Template.bind({});
 
 Password.args = {
@@ -109,6 +121,17 @@ Checkbox.args = {
     name: 'checkbox',
     register: () => { },
     required: true
+};
+
+export const CheckboxHorizonatal = Template.bind({});
+
+CheckboxHorizonatal.args = {
+    type: 'checkbox',
+    label: 'Checkbox',
+    name: 'checkbox',
+    register: () => { },
+    required: true,
+    direction: 'horizontal'
 };
 
 export const Radio = Template.bind({});
