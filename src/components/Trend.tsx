@@ -3,6 +3,7 @@ import { getButtonTheme, getTypographyAlternateTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
 import { Loader, TrendingDown, TrendingUp } from 'react-feather';
 import { TrendProps } from '../utils/types';
+import { NOT_AVAILABLE } from '../utils/messages';
 
 /**
  * Box component wraps all box styles in the design system
@@ -29,7 +30,7 @@ export const Trend: FC<TrendProps> = ({ icon, label, meta, count, theme = 'prima
             <div className="flex items-center space-x-4">
                 <Avatar icon={icon} theme={theme} rounded />
                 <div className="flex flex-col">
-                    <div className='text-xl font-semibold'>{count ? count.toString() : 'N/A'}</div>
+                    <div className='text-xl font-semibold'>{!count && count != 0 ? NOT_AVAILABLE : count.toString()}</div>
                     <div className="pt-1">
                         <span className={`text-sm ${getTypographyAlternateTheme(theme)}`}>{label}</span>
                     </div>

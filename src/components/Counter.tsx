@@ -3,6 +3,7 @@ import { CounterProps } from '../utils/types';
 import { getTypographyAlternateTheme, getButtonTheme } from '../utils/helpers';
 import { Avatar } from './Avatar';
 import { Loader } from 'react-feather';
+import { NOT_AVAILABLE } from '../utils/messages';
 
 
 /**
@@ -30,7 +31,7 @@ export const Counter: FC<CounterProps> = ({ icon, label, count, theme = 'primary
             <Avatar icon={icon} theme={theme} />
             <div className="flex flex-col">
                 <span className={`text-sm ${getTypographyAlternateTheme(theme)}`}>{label}</span>
-                <span className='text-2xl font-bold'>{count ? count.toString() : 'N/A'}</span>
+                <span className='text-2xl font-bold'>{!count && count != 0 ? NOT_AVAILABLE : count.toString()}</span>
                 <div className="relative mt-2">
                     <div className={`h-1 w-full opacity-20 absolute rounded-lg ${getButtonTheme(theme)}`} />
                     <div className={`h-1 w-1/2 absolute rounded-lg ${getButtonTheme(theme)}`} />

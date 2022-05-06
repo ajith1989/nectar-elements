@@ -26,4 +26,5 @@ export * from './components/Toggle';
 export * from './components/Tooltip';
 export * from './components/Trend';
 export * from './components/Typography';
+export * from './components/Upload';
 export * from './components/Weather';

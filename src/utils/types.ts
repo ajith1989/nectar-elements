@@ -414,6 +414,22 @@ export interface TypographyProps extends HTMLAttributes<HTMLDivElement> {
     type?: TypographyTypes
 }
 
+/** Upload */
+export interface UploadProps extends HTMLAttributes<HTMLLabelElement> {
+    /** Label */
+    label?: string;
+    /** Name */
+    name?: string;
+    /** Name */
+    id?: string;
+    /** Multiple Files */
+    multiple?: boolean;
+    /** Theme */
+    theme?: ThemeTypes;
+    /** Accepted file types */
+    accept?: string;
+}
+
 /** Weather */
 export interface WeatherProps extends HTMLAttributes<HTMLDivElement> {
     /** Current Temperature */
